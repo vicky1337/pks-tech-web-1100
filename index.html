@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PKS Technology— Bulk SMS | IVR | DTMF | WhatsApp | Email</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --accent:#06b6d4; /* teal */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071025 0%, #071727 60%);color:#e6eef8;min-height:100vh}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+
+    /* NAV */
+    header{backdrop-filter: blur(6px);padding:18px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--accent),#8b5cf6);padding:10px 14px;border-radius:12px;color:#04202a;text-decoration:none;font-weight:700}
+    .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;padding:36px 0}
+    .hero h1{font-size:36px;line-height:1.02;margin:0}
+    .hero p{color:var(--muted);margin:12px 0 18px}
+    .hero .actions{display:flex;gap:12px}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 30px rgba(3,7,18,0.6)}
+    .hero-visual{border-radius:14px;overflow:hidden}
+    .hero-visual img{display:block;width:100%;height:100%;object-fit:cover}
+
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .feature{background:var(--glass);padding:14px;border-radius:12px}
+    .feature h4{margin:8px 0 0;font-size:16px}
+    .feature p{color:var(--muted);font-size:13px;margin:6px 0 0}
+
+    /* PRICING */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0}
+    .price-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .price{font-size:28px;font-weight:700}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;margin-bottom:60px}
+    form label{display:block;font-size:13px;margin-bottom:8px;color:var(--muted)}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button{background:var(--accent);border:0;padding:12px 14px;border-radius:10px;font-weight:700;color:#04202a}
+
+    /* Footer */
+    footer{padding:36px 0;color:var(--muted)}
+
+    /* small screens */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .pricing{grid-template-columns:repeat(1,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      nav ul{display:none}
+      .hamburger{display:block}
+    }
+    @media (max-width:520px){
+      .features{grid-template-columns:1fr}
+      .logo{width:42px;height:42px}
+      .hero h1{font-size:26px}
+    }
+
+    /* small util */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">BC</div>
+        <div>
+          <div style="font-weight:700">PKS Technology</div>
+          <div class="muted" style="font-size:12px">Bulk IVR · SMS · DTMF · WhatsApp · Email</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#docs">Docs & API</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="cta" href="#contact">Get Started</a>
+        <button class="hamburger" id="navToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="pill">Enterprise-grade · Pay-as-you-go · API-ready</div>
+        <h1>Send voice & text at scale — SMS, IVR, DTMF, WhatsApp & Email from one platform</h1>
+        <p>Deliver notifications, reminders, OTPs and campaigns with reliable delivery, advanced analytics, and programmable call flows.</p>
+        <div class="actions" style="margin-top:8px">
+          <a class="cta" href="#contact">Start Free Trial</a>
+          <a href="#pricing" style="background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:12px;color:var(--muted);text-decoration:none;font-weight:700">See pricing</a>
+        </div>
+
+        <div class="card" style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <div style="flex:1">
+            <div style="font-size:13px;color:var(--muted)">Trusted by</div>
+            <div style="display:flex;gap:12px;margin-top:10px;align-items:center">
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=200&q=60" alt="client" style="width:64px;height:40px;object-fit:cover;border-radius:8px">
+              <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=200&q=60" alt="client" style="width:64px;height:40px;object-fit:cover;border-radius:8px">
+              <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=200&q=60" alt="client" style="width:64px;height:40px;object-fit:cover;border-radius:8px">
+            </div>
+          </div>
+          <div style="text-align:right;color:var(--muted);font-size:13px">99.95% uptime · Global coverage</div>
+        </div>
+      </div>
+
+      <div class="hero-visual card">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="dashboard screenshot">
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 style="margin-top:16px">What we offer</h2>
+      <div class="features">
+        <div class="feature">
+          <strong>Bulk SMS</strong>
+          <p>High-throughput SMS gateway for transactional and promotional messages, with templates, personalization and delivery reports.</p>
+        </div>
+        <div class="feature">
+          <strong>Programmatic IVR</strong>
+          <p>Build interactive call flows, auto-dial lists and voice campaigns with TTS, playback, and call recordings.</p>
+        </div>
+        <div class="feature">
+          <strong>DTMF & Call Routing</strong>
+          <p>Collect keypad input during calls, build menus and route calls to agents or automated flows.</p>
+        </div>
+        <div class="feature">
+          <strong>WhatsApp & Rich Messaging</strong>
+          <p>Send templates, media, and two-way conversations on WhatsApp at scale using our certified channels.</p>
+        </div>
+        <div class="feature">
+          <strong>Email & SMTP</strong>
+          <p>Reliable bulk email delivery with analytics, DKIM/SPF setup and bounce handling.</p>
+        </div>
+        <div class="feature">
+          <strong>API & Integrations</strong>
+          <p>REST APIs, webhooks, SDKs and prebuilt integrations for CRMs and marketing platforms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2 style="margin-top:36px">Simple pricing</h2>
+      <div class="pricing">
+        <div class="price-card">
+          <div style="font-weight:700">Starter</div>
+          <div class="price">₹0.50 / SMS</div>
+          <p class="muted">For small businesses and testing. Includes API access and basic analytics</p>
+          <ul class="muted" style="margin-top:12px">
+            <li>Pay-as-you-go</li>
+            <li>100 free credits</li>
+            <li>Email support</li>
+          </ul>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Choose Starter</a></div>
+        </div>
+
+        <div class="price-card">
+          <div style="font-weight:700">Growth</div>
+          <div class="price">Custom</div>
+          <p class="muted">Dedicated throughput, IVR minutes, and SLA for growing companies.</p>
+          <ul class="muted" style="margin-top:12px">
+            <li>Volume discounts</li>
+            <li>24/7 support</li>
+            <li>Account manager</li>
+          </ul>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Contact Sales</a></div>
+        </div>
+
+        <div class="price-card">
+          <div style="font-weight:700">Enterprise</div>
+          <div class="price">Custom + SLA</div>
+          <p class="muted">Custom integrations, On-prem connectors, and compliance support.</p>
+          <ul class="muted" style="margin-top:12px">
+            <li>Onboarding & training</li>
+            <li>Compliance-ready</li>
+            <li>Priority SLA</li>
+          </ul>
+          <div style="margin-top:12px"><a class="cta" href="#contact">Talk to us</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="docs" style="margin-top:28px">
+      <h2>Docs & API</h2>
+      <div class="card" style="margin-top:12px">
+        <p class="muted">Open API with example requests, SDKs for Node/Python/Java and webhook events for delivery tracking. Example:</p>
+<pre style="background:rgba(255,255,255,0.03);padding:12px;border-radius:8px;color:#cfeef8;overflow:auto">curl -X POST https://api.bulkcomms.example/v1/send -H "Authorization: Bearer &lt;key&gt;" -H "Content-Type: application/json" -d '{"to":["91xxxxxxxxxx"],"message":"Your OTP is 123456"}'</pre>
+      </div>
+    </section> -->
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact & Trial</h2>
+      <div class="contact-grid">
+        <div>
+          <div class="card">
+            <h3 style="margin-top:0">Request a free trial</h3>
+            <p class="muted">No credit card. Get access to dashboard, API keys and 100 free credits.</p>
+
+            <form id="leadForm" style="margin-top:12px">
+              <label for="name">Full name</label>
+              <input id="name" name="name" placeholder="Your name" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="hello@yourcompany.com" required>
+
+              <label for="company">Company</label>
+              <input id="company" name="company" placeholder="Company name">
+
+              <label for="need">I want to use BulkComms for</label>
+              <select id="need" name="need">
+                <option>Transactional SMS / OTP</option>
+                <option>IVR / Voice campaigns</option>
+                <option>WhatsApp & Rich Messaging</option>
+                <option>Notifications & Alerts</option>
+              </select>
+
+              <label for="message">Message (optional)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your use-case"></textarea>
+
+              <div style="margin-top:12px"><button type="submit">Request trial</button></div>
+              <div id="formMsg" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
+            </form>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:12px">
+            <div class="card" style="flex:1"><strong>Sales</strong><div class="muted" style="font-size:13px;margin-top:8px">sales@PKStechnology.com</div></div>
+            <div class="card" style="flex:1"><strong>Support</strong><div class="muted" style="font-size:13px;margin-top:8px">support@PKStechnology.com</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h4 style="margin-top:0">Live demo</h4>
+            <p class="muted">See dashboard analytics, message logs, and call recordings in the demo console.</p>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=60" alt="demo" style="width:100%;border-radius:10px;margin-top:12px">
+          </div>
+
+          <div style="margin-top:12px" class="card">
+            <h4 style="margin:0">Security & Compliance</h4>
+            <p class="muted" style="margin-top:8px">SOC2-ready platform, data encryption in transit & at rest, GDPR & local compliance options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <div style="font-weight:700">PKS Technology</div>
+        <div class="muted" style="font-size:13px">© 2025 PKS Technology Pvt Ltd</div>
+      </div>
+      <div class="muted">Privacy · Terms · Status</div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    navToggle && navToggle.addEventListener('click', ()=>{
+      const ul = document.querySelector('nav ul');
+      if(!ul) return;
+      ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
+      ul.style.flexDirection = 'column';
+      ul.style.position = 'absolute';
+      ul.style.right = '24px';
+      ul.style.top = '70px';
+      ul.style.background = 'rgba(3,7,18,0.8)';
+      ul.style.padding = '12px';
+      ul.style.borderRadius = '10px';
+    });
+
+    // simple form handler (mock)
+    const form = document.getElementById('leadForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+      formMsg.textContent = 'Sending...';
+      // mock delay
+      setTimeout(()=>{
+        formMsg.textContent = 'Thanks ' + (payload.name || '') + '! We will contact you at ' + (payload.email || '') + '.';
+        form.reset();
+      },800);
+    });
+  </script>
+</body>
+</html>
+
